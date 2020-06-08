@@ -69,7 +69,6 @@ body {
     border: solid 1px gray;
     padding: 0.5em;
     width: 65%;
-    overflow
   }
   #viewport img {
     width: 200px
@@ -78,7 +77,6 @@ body {
     display: flex;
   }
   .gridwrapper {
-    verflow: auto;
       position: relative;
       height: 250px;
   }
