@@ -1,0 +1,642 @@
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+<!doctype html>
+<head>
+   <link href="styles/style.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Documentation Page</title>
+</head>
+
+<body>
+  <nav id="navbar">
+    <header>
+      <h1>CSS Responsive <br>Web Design</h1>
+    </header>
+    <ul>
+      <a class="nav-link" href="#introduction">
+        <li>Introduction</li>
+      </a>
+      <a class="nav-link" href="#viewport">
+        <li>Viewport</li>
+      </a>
+      <a class="nav-link" href="#grid_view">
+        <li>Grid View</li>
+      </a>
+      <a class="nav-link" href="#media_queries">
+        <li>Media Queries</li>
+      </a>
+      <a class="nav-link" href="#images">
+        <li>Images</li>
+      </a>
+      <a class="nav-link" href="#videos">
+        <li>Videos</li>
+      </a>
+      <a class="nav-link" href="#frameworks">
+        <li>Frameworks</li>
+      </a>
+      <a class="nav-link" href="#templates">
+        <li style="border-bottom: solid 1px gray">Templates</li>
+      </a>
+    </ul>
+  </nav>
+  <main id="main-doc">
+    <section class="main-section" id="introduction">
+      <header>
+        <h2>Introduction</h2>
+      </header>
+      <article>
+        <h3>What is Responsive Web Design?</h3>
+        <ul>
+          <li>Responsive web design makes your web page look good on all devices.</li>
+
+          <li>Responsive web design uses only HTML and CSS.</li>
+
+          <li>Responsive web design is not a program or a JavaScript.</li>
+        </ul>
+
+        <h3>Designing For The Best Experience For All Users</h3>
+        <p>Web pages can be viewed using many different devices: desktops, tablets, and phones. Your web page should look good, and be easy to use, regardless of the device.</p>
+
+        <p>Web pages should not leave out information to fit smaller devices, but rather adapt its content to fit any device:</p>
+        <div id="screen-sizes">
+          <figure><img src="https://www.w3schools.com/css/rwd_desktop.png" alt="Desktop View">
+            <figcaption>Desktop</figcaption>
+          </figure>
+          <figure><img src="https://www.w3schools.com/css/rwd_tablet.png" alt="Tablet View">
+            <figcaption>Tablet</figcaption>
+          </figure>
+          <figure><img src="https://www.w3schools.com/css/rwd_phone.png" alt="Phone View">
+            <figcaption>Phone</figcaption>
+          </figure>
+        </div>
+
+        <p>It is called responsive web design when you use CSS and HTML to resize, hide, shrink, enlarge, or move the content to make it look good on any screen.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="viewport">
+      <header>
+        <h2>Viewport</h2>
+      </header>
+      <article>
+        <h3>What is The Viewport?</h3>
+        <ul>
+          <li>The viewport is the user's visible area of a web page.</li>
+          <li>The viewport varies with the device, and will be smaller on a mobile phone than on a computer screen.</li>
+        </ul>
+        <p>Before tablets and mobile phones, web pages were designed only for computer screens, and it was common for web pages to have a static design and a fixed size.</p>
+
+        <p>Then, when we started surfing the internet using tablets and mobile phones, fixed size web pages were too large to fit the viewport. To fix this, browsers on those devices scaled down the entire web page to fit the screen. This was not perfect!! But a quick fix.</p>
+        <p>HTML5 introduced a method to let web designers take control over the viewport, through the <code class="code-span-1">&lt;meta&gt;</code> tag.
+
+          <p>You should include the following <code class="code-span-1">&lt;meta&gt;</code> viewport element in all your web pages:</p>
+          <code class="code-span-2">&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code>
+          <p>A <code class="code-span-1">&lt;meta></code> viewport element gives the browser instructions on how to control the page's dimensions and scaling.</p>
+
+          <p>The <code class="code-span-1">width=device-width</code> part sets the width of the page to follow the screen-width of the device (which will vary depending on the device).</p>
+
+          <p>The <code class="code-span-1">initial-scale=1.0</code> part sets the initial zoom level when the page is first loaded by the browser.</p>
+
+          Here is an example of a web page without the viewport meta tag, and the same web page with the viewport meta tag:
+          <div>
+            <figure><img src="https://i.ibb.co/NpfQGpq/Screenshot-2020-04-22-at-18-21-32.png" alt="Screenshot-2020-04-22-at-18-21-32" border="0">
+              <figcaption>Without the viewport meta tag</figcaption>
+            </figure>
+            <figure><img src="https://i.ibb.co/K2TF5k8/Screenshot-2020-04-22-at-18-21-42.png" alt="Screenshot-2020-04-22-at-18-21-42" border="0">
+              <figcaption>With the viewport meta tag</figcaption>
+            </figure>
+          </div>
+          <h3>Size Content to The Viewport</h3>
+          <p>Users are used to scrolling websites vertically on both desktop and mobile devices - but not horizontally!</p>
+
+          <p>So, if the user is forced to scroll horizontally, or zoom out, to see the whole web page it results in a poor user experience.</p>
+
+          <p>Some additional rules to follow:</p>
+          <ol>
+            <li>Do NOT use large fixed width elements - For example, if an image is displayed at a width wider than the viewport it can cause the viewport to scroll horizontally. Remember to adjust this content to fit within the width of the viewport.</li>
+            <li>Do NOT let the content rely on a particular viewport width to render well - Since screen dimensions and width in CSS pixels vary widely between devices, content should not rely on a particular viewport width to render well.</li>
+            <li>Use CSS media queries to apply different styling for small and large screens - Setting large absolute CSS widths for page elements will cause the element to be too wide for the viewport on a smaller device. Instead, consider using relative width values, such as width: 100%. Also, be careful of using large absolute positioning values. It may cause the element to fall outside the viewport on small devices.</li>
+            <ol>
+      </article>
+    </section>
+    <section class="main-section" id="grid_view">
+      <header>
+        <h2>Grid View</h2>
+      </header>
+      <article>
+        <p>Many web pages are based on a grid-view, which means that the page is divided into columns:</p>
+        <div class="gridcontainer">
+          <div class="gridwrapper">
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+            <div class="gridcontent"></div>
+          </div>
+        </div>
+        <p>Using a grid-view is very helpful when designing web pages. It makes it easier to place elements on the page.</p>
+        <p>A responsive grid-view often has 12 columns, and has a total width of 100%, and will shrink and expand as you resize the browser window.</p>
+
+        <a href="https://www.w3schools.com/css/tryresponsive_grid.htm" target="_blank"><button>Example: Responsive Grid View</button></a>
+        <h3>Building A Responsive Grid-View</h3>
+        <p>Lets start building a responsive grid-view.</p>
+
+        <p>First ensure that all HTML elements have the box-sizing property set to border-box. This makes sure that the padding and border are included in the total width and height of the elements.</p>
+
+        <p>Add the following code in your CSS:</p>
+        <code class="code-span-1">* {<br>
+          box-sizing: border-box;<br>
+          }</code>
+        <p>Read more about the box-sizing property in our CSS Box Sizing chapter.</p>
+
+        <p>The following example shows a simple responsive web page, with two columns:</p>
+        <h4>Example</h4>
+        <div class="code-span-2"> <code><span class="cssselectorcolor">.menu</span> {
+            <div class="csspropertycolor">width: <span class="csspropertyvaluecolor">25%</span><span class="colon">;</span><br></div>
+            <div class="csspropertycolor">float: <span class="csspropertyvaluecolor">left</span><span class="colon">;</span></div>
+            }<br>
+            <span class="cssselectorcolor">.main</span> {<br>
+            <div class="csspropertycolor">width: <span class="csspropertyvaluecolor">75%</span><span class="colon">;</span></div>
+            <div class="csspropertycolor">float: <span class="csspropertyvaluecolor">left</span><span class="colon">;</span></div>
+            }
+          </code></div>
+        <a target="_blank" href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_webpage"><button>Try it Yourself</button></a>
+        <p>The example above is fine if the web page only contains two columns.</p>
+
+        <p>However, we want to use a responsive grid-view with 12 columns, to have more control over the web page.</p>
+
+        <p>First we must calculate the percentage for one column: 100% / 12 columns = 8.33%.</p>
+
+        <p>Then we make one class for each of the 12 columns, <code class="code-span-1">class="col-"</code> and a number defining how many columns the section should span:</p>
+        <h4>CSS:</h4>
+        <div class="code-span-2" class="cssselectorcolor" style="color:brown"><code>
+            .col-1 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-2 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 16.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-3 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 25%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+            .col-4 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 33.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-5 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 41.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-6 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 50%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+            .col-7 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 58.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-8 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 66.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-9 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 75%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+            .col-10 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 83.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-11 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 91.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-12 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span>
+                100%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_cols" target="_blank"><button>Try it Yourself</button></a>
+        <p>All these columns should be floating to the left, and have a padding of 15px:</p>
+        <h4>CSS:</h4>
+        <div class="cssselectorcolor, code-span-2" style="color:brown"><code>
+            [class*="col-"] <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; float<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> left<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+              padding<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 15px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; border<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 1px solid red<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </code></div>
+        <p>Each row should be wrapped in a <code class="code-span-1">&lt;div&gt;</code>. The number of columns inside a row should always add up to 12:
+          <h4>HTML:</h4>
+          <div class="code-span-2"><code>
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> <span class="commentcolor" style="color:green">&lt;!-- 25% --&gt;</span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-9"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span> <span class="commentcolor" style="color:green">&lt;!-- 75% --&gt;</span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span></code> </div>
+          <p>The columns inside a row are all floating to the left, and are therefore taken out of the flow of the page, and other elements will be placed as if the columns do not exist. To prevent this, we will add a style that clears the flow:</p>
+          <h4>CSS:</h4>
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                .row::after <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;content<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> ""<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                  clear<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> both<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; display<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> table<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+          <p>We also want to add some styles and colors to make it look better:</p>
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                html <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; font-family<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> "Lucida Sans", sans-serif<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>
+                .header <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; background-color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> #9933cc<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> #ffffff<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+                  &nbsp; padding<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 15px<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>.menu ul <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp;
+                  list-style-type<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> none<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;margin<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 0<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                  padding<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 0<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>.menu li <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp;
+                  padding<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; margin-bottom<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 7px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                  background-color <span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span>#33b5e5<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> #ffffff<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;box-shadow<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>.menu li:hover <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                  &nbsp;
+                  background-color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> #0099cc<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_styles" target="_blank"><button>Try it Yourself</button></a>
+          <div class="notice"><b>Notice</b> that the webpage in the example does not look good when you resize the browser window to a very small width. In the next chapter you will learn how to fix that.</div>
+      </article>
+    </section>
+    <section class="main-section" id="media_queries">
+      <header>
+        <h2>Media Queries</h2>
+      </header>
+      <article>
+        <h3>What is a Media Query?</h3>
+        <p>Media query is a CSS technique introduced in CSS3.</p>
+
+        <p>It uses the <code class="code-span-1">@media</code> rule to include a block of CSS properties only if a certain condition is true.</p>
+
+        <h4>Example</h4>
+        <p>If the browser window is 600px or smaller, the background color will be lightblue:</p>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              @media only screen and (max-width: 600px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; body <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>
+                  &nbsp;&nbsp;&nbsp;
+                  background-color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> lightblue<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; </span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Add a Breakpoint</h3>
+        <p>Earlier in this tutorial we made a web page with rows and columns, and it was responsive, but it did not look good on a small screen.</p>
+
+        <p>Media queries can help with that. We can add a breakpoint where certain parts of the design will behave differently on each side of the breakpoint.</p>
+        <div id="screen-sizes">
+          <figure><img src="https://www.w3schools.com/css/rwd_desktop.png" alt="Desktop View">
+            <figcaption>Desktop</figcaption>
+          </figure>
+
+          <figure><img src="https://www.w3schools.com/css/rwd_phone.png" alt="Phone View">
+            <figcaption>Phone</figcaption>
+          </figure>
+        </div>
+        <p>Use a media query to add a breakpoint at 768px:</p>
+
+        <h4>Example</h4>
+        <p>When the screen (browser window) gets smaller than 768px, each column should have a width of 100%:</p>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              <span class="commentcolor" style="color:green">/* For desktop: */</span><br>.col-1 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-2 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 16.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-3 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 25%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+              .col-4 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 33.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-5 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 41.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-6 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 50%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+              .col-7 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 58.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-8 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 66.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-9 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 75%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+              .col-10 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 83.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-11 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 91.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br>.col-12 <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span>
+                  100%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>@media only screen and (max-width: 768px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp;&nbsp;<span class="commentcolor" style="color:green">/* For mobile phones: */</span><br>
+                &nbsp;
+                [class*="col-"] <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;&nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;</span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_breakpoints" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Always Design for Mobile First</h3>
+        <p>Mobile First means designing for mobile before designing for desktop or any other device (This will make the page display faster on smaller devices).</p>
+
+        <p>This means that we must make some changes in our CSS.</p>
+
+        <p>Instead of changing styles when the width gets smaller than 768px, we should change the design when the width gets larger than 768px. This will make our design Mobile First:</p>
+
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              <span class="commentcolor" style="color:green">/* For mobile phones: */</span><br>[class*="col-"] <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>@media only screen and (min-width:
+              768px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp;&nbsp;<span class="commentcolor" style="color:green">/* For desktop: */</span><br>&nbsp;&nbsp;.col-1 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-2 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 16.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-3 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 25%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-4 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 33.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                &nbsp; .col-5 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 41.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-6 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 50%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-7 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 58.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                &nbsp; .col-8 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 66.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-9 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 75%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-10 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 83.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-11 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 91.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                &nbsp; .col-12 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mobilefirst" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Another Breakpoint</h3>
+        <p>You can add as many breakpoints as you like.</p>
+
+        <p>We will also insert a breakpoint between tablets and mobile phones.</p>
+        <div id="screen-sizes">
+          <figure><img src="https://www.w3schools.com/css/rwd_desktop.png" alt="Desktop View">
+            <figcaption>Desktop</figcaption>
+          </figure>
+          <figure><img src="https://www.w3schools.com/css/rwd_tablet.png" alt="Tablet View">
+            <figcaption>Tablet</figcaption>
+          </figure>
+          <figure><img src="https://www.w3schools.com/css/rwd_phone.png" alt="Phone View">
+            <figcaption>Phone</figcaption>
+          </figure>
+        </div>
+        <p>We do this by adding one more media query (at 600px), and a set of new classes for devices larger than 600px (but smaller than 768px):</p>
+
+        <h4>Example</h4>
+        <p>Note that the two sets of classes are almost identical, the only difference is the name (<code class="code-span-1">col-</code> and <code class="code-span-1">col-s-</code>):
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                <span class="commentcolor" style="color:green">/* For mobile phones: */</span><br>[class*="col-"] <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>@media only screen and (min-width: 600px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>
+                  &nbsp;
+                  <span class="commentcolor" style="color:green">/* For tablets: */</span><br>&nbsp;&nbsp;.col-s-1 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp;&nbsp;.col-s-2 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 16.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-s-3 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 25%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-4 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 33.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-5 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 41.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-s-6 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 50%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-7 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 58.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-8 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 66.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-s-9 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 75%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-10 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 83.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-s-11 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 91.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-s-12 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br>@media only screen and (min-width:
+                768px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; <span class="commentcolor" style="color:green">/* For desktop: */</span><br>&nbsp; .col-1 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 8.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-2 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 16.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-3 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 25%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-4 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 33.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-5 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 41.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-6 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 50%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-7 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 58.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-8 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 66.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-9 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 75%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-10 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 83.33%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>&nbsp; .col-11 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 91.66%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br>
+                  &nbsp; .col-12 <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red">width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span></span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+          <p>It might seem odd that we have two sets of identical classes, but it gives us the opportunity in HTML, to decide what will happen with the columns at each breakpoint:</p>
+          <h4>HTML Example</h4>
+          <h5>For desktop:</h5>
+
+          <p>The first and the third section will both span 3 columns each. The middle section will span 6 columns.</p>
+
+          <h5>For tablets:</h5>
+
+          <p>The first section will span 3 columns, the second will span 9, and the third section will be displayed below the first two sections, and it will span 12 columns:</p>
+          <div class="code-span-2"><code>
+              <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-3 col-s-3"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                  class<span class="attributevaluecolor" style="color:mediumblue">="col-6 col-s-9"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                  class<span class="attributevaluecolor" style="color:mediumblue">="col-3 col-s-12"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span>...<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span></code> </div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_col-s" target="_blank"><button>Try it Yourself</button></a>
+          <h3>Typical Device Breakpoints</h3>
+          <p>There are tons of screens and devices with different heights and widths, so it is hard to create an exact breakpoint for each device. To keep things simple you could target five groups:</p>
+          <h4>Example</h4>
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                <span class="commentcolor" style="color:green">/*
+                  Extra small devices (phones, 600px and down) */</span><br>@media only screen and (max-width: 600px)
+                <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">...</span><span class="cssdelimitercolor" style="color:black">}</span> <br><br><span class="commentcolor" style="color:green">/* Small devices (portrait tablets and large phones, 600px and up)
+                  */</span><br>@media only screen and (min-width: 600px) <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">...</span><span class="cssdelimitercolor" style="color:black">}</span> <br><br><span class="commentcolor" style="color:green">/* Medium devices (landscape tablets, 768px and up) */</span><br>
+                @media only screen and (min-width: 768px) <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">...</span><span class="cssdelimitercolor" style="color:black">}</span> <br><br><span class="commentcolor" style="color:green">/* Large devices (laptops/desktops, 992px and up)
+                  */</span><br>
+                @media only screen and (min-width: 992px) <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">...</span><span class="cssdelimitercolor" style="color:black">}</span> <br><br><span class="commentcolor" style="color:green">/* Extra large devices (large
+                  laptops and desktops,
+                  1200px and up) */</span><br>@media only screen and (min-width: 1200px) <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red">...</span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery_breakpoints" target="_blank"><button>Try it Yourself</button></a>
+          <h3>Orientation: Portrait / Landscape</h3>
+          <p>Media queries can also be used to change layout of a page depending on the orientation of the browser.</p>
+
+          <p>You can have a set of CSS properties that will only apply when the browser window is wider than its height, a so called "Landscape" orientation:</p>
+
+          <h4>Example</h4>
+          <p>The web page will have a lightblue background if the orientation is in landscape mode:</p>
+          <div class="code-span-2"><code> <span class="cssselectorcolor" style="color:brown">
+                @media only screen and (orientation:
+                landscape) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp;&nbsp;body <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>
+                    &nbsp;&nbsp;&nbsp;
+                    background-color<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> lightblue<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;</span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_mediaquery_orientation" target="_blank"><button>Try it Yourself</button></a>
+          <h3>Hide Elements With Media Queries</h3>
+          <p>Another common use of media queries, is to hide elements on different screen sizes:</p>
+          <div class="hidden">I will be hidden on small screens.</div>
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                <span class="commentcolor" style="color:green">/* If the screen size is 600px wide or less, hide the element */</span><br>@media
+                only screen and (max-width: 600px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; div.example <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;&nbsp;
+                    display<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> none<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; </span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+              </span></code></div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_hide" target="_blank"><button>Try it Yourself</button></a>
+          <h3>Change Font Size With Media Queries</h3>
+          <p>You can also use media queries to change the font size of an element on different screen sizes:</p>
+          <h1 id="varfontexample">Variable Font Size.</h1>
+          <h4>Example</h4>
+          <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                <span class="commentcolor" style="color:green">/* If the screen size is 601px or
+                  more, set the font-size of &lt;div&gt; to 80px */</span><br>@media only screen and (min-width:
+                601px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; div.example <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;&nbsp;
+                    font-size<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 80px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; </span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br><span class="commentcolor" style="color:green">/* If the screen size is 600px or
+                  less,
+                  set the font-size of &lt;div&gt; to 30px */</span><br>@media only screen and (max-width: 600px) <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; div.example <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;&nbsp;
+                    font-size<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 30px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; </span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span><br>
+              </span></code></div>
+          <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss_mediaqueries_fontsize" target="_blank"><button>Try it Yourself</button></a>
+          <h3>CSS @media Reference</h3>
+          <p>For a full overview of all the media types and features/expressions, please look at the <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">@media rule in our CSS reference.</a></p>
+      </article>
+    </section>
+    <section class="main-section" id="images">
+      <header>
+        <h2>Images</h2>
+      </header>
+      <article>
+        <figure><img class="responsiveimage" src="https://www.w3schools.com/css/img_chania.jpg">
+          <figcaption>Resize the browser window to see how the image scales to fit the page.</figcaption>
+        </figure>
+        <h3>Using the Width Property</h3>
+        <p>If the <code class="code-span-1">width</code> property is set to a percentage and the height is set to "auto", the image will be responsive and scale up and down:</p>
+
+        <h4>Example</h4>
+        <div class="code-span-2"><code>
+            <span class="cssselectorcolor" style="color:brown">
+              img <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp;&nbsp;width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image2" target="_blank"><button>Try it Yourself</button></a>
+        <p>Notice that in the example above, the image can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the max-width property instead.</p>
+
+        <h3>Using The max-width Property</h3>
+        <p>If the max-width property is set to 100%, the image will scale down if it has to, but never scale up to be larger than its original size:</p>
+        <h4>Example</h4>
+        <div class="code-span-2"><code>
+            <span class="cssselectorcolor" style="color:brown">
+              img <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp; max-width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Add an Image to The Example Web Page</h3>
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              img <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image3" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Background Images</h3>
+        <p>Background images can also respond to resizing and scaling.</p>
+
+        <p>Here we will show three different methods:</p>
+
+        <ol>
+          <li>
+            <p>If the <code class="code-span-1">background-size</code> property is set to "contain", the background image will scale, and try to fit the content area. However, the image will keep its aspect ratio (the proportional relationship between the image's width and height):</p>
+
+            <div class="bg1"></div>
+            <p>Here is the CSS code:</p>
+
+            <h4>Example</h4>
+            <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                  div <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 400px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                    background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> url('img_flowers.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;background-repeat<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> no-repeat<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;background-size<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> contain<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;border<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 1px solid red<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+            <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_background1" target="_blank"><button>Try it Yourself</button></a>
+          </li>
+          <li>
+            <p>If the <code class="code-span-1">background-size</code> property is set to "100% 100%", the background image will stretch to cover the entire content area:</p>
+            <div class="bg2"></div>
+            <p>Here is the CSS code:</p>
+
+            <h4>Example</h4>
+            <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                  div <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 400px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                    background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> url('img_flowers.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                    background-size<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100% 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; border<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 1px solid red<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+            <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_background2" target="_blank"><button>Try it Yourself</button></a>
+          </li>
+          <li>
+            <p>If the <code class="code-span-1">background-size</code> property is set to "cover", the background image will scale to cover the entire content area. Notice that the "cover" value keeps the aspect ratio, and some part of the background image may be clipped:</p>
+            <div class="bg3"></div>
+            <p>Here is the CSS code:</p>
+
+            <h4>Example</h4>
+            <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+                  div <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp;&nbsp;width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 400px<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;
+                    background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> url('img_flowers.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;background-size<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> cover<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp;&nbsp;border<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 1px solid red<span class="cssdelimitercolor" style="color:black">;</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+
+            <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_background3" target="_blank"><button>Try it Yourself</button></a>
+          </li>
+        </ol>
+        <h3>Different Images for Different Devices</h3>
+        <p>A large image can be perfect on a big computer screen, but useless on a small device. Why load a large image when you have to scale it down anyway? To reduce the load, or for any other reasons, you can use media queries to display different images on different devices.</p>
+
+        <div class="hide"><p>Here is one large image and one smaller image that will be displayed on different devices:</p>
+        <img src="https://www.w3schools.com/css/img_flowers.jpg"><br><img src="https://www.w3schools.com/css/img_smallflower.jpg"></hide>
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              <span class="commentcolor" style="color:green">/* For width smaller than 400px: */</span><br>body <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span>
+                  url('img_smallflower.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span> <br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br><span class="commentcolor" style="color:green">/*
+                For width 400px and larger: */</span><br>@media only screen and (min-width: 400px)
+              <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp; body <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"> <br>&nbsp;&nbsp;&nbsp;&nbsp;background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> url('img_flowers.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span> <br>
+                  &nbsp;&nbsp;</span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_mediaq" target="_blank"><button>Try it Yourself</button></a>
+        <p>You can use the media query min-device-width, instead of min-width, which checks the device width, instead of the browser width. Then the image will not change when you resize the browser window:</p>
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              <span class="commentcolor" style="color:green">/* For devices smaller than 400px: */</span><br>body <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>&nbsp; background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span>
+                  url('img_smallflower.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span> <br></span><span class="cssdelimitercolor" style="color:black">}</span><br><br><span class="commentcolor" style="color:green">/*
+                For devices 400px and larger: */</span><br>@media only screen and (min-device-width: 400px)
+              <span class="cssdelimitercolor" style="color:black">{</span><span class="cssselectorcolor" style="color:brown"><br>&nbsp;&nbsp;body <span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">{</span></span><span class="csspropertycolor" style="color:red"> <br>&nbsp;&nbsp;&nbsp;
+                  background-image<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> url('img_flowers.jpg')<span class="cssdelimitercolor" style="color:black">;</span></span> <br>&nbsp;&nbsp;</span><span class="cssdelimitercolor" style="color:black"><span class="cssdelimitercolor" style="color:black">}</span></span><br></span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_mediaq2" target="_blank"><button>Try it Yourself</button></a>
+        <h3>HTML5 &lt;picture&gt; Element</h3>
+        <p>HTML5 introduced the <code class-"code-span-1">&lt;picture&gt;</code> element, which lets you define more than one image.</p>
+
+        <h4>Browser Support</h4>
+        <img class="tableimg" src="https://i.ibb.co/T4pxmtN/Screenshot-2020-04-24-at-14-18-38.png">
+        <p>The <code class"code-span-1">&lt;picture&gt;</code> element works similar to the <code class"code-span-1">&lt;video&gt;</code> and <code class"code-span-1">&lt;audio&gt;</code> elements. You set up different sources, and the first source that fits the preferences is the one being used:</p>
+
+        <h4>Example</h4>
+        <div class="code-span-2"><code>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>picture<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>source<span class="attributecolor" style="color:red"> srcset<span class="attributevaluecolor" style="color:mediumblue">="img_smallflower.jpg"</span> media<span class="attributevaluecolor" style="color:mediumblue">="(max-width:
+                  400px)"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>source<span class="attributecolor" style="color:red"> srcset<span class="attributevaluecolor" style="color:mediumblue">="img_flowers.jpg"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>img<span class="attributecolor" style="color:red">
+                src<span class="attributevaluecolor" style="color:mediumblue">="img_flowers.jpg"</span> alt<span class="attributevaluecolor" style="color:mediumblue">="Flowers"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/picture<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_image_picture" target="_blank"><button>Try it Yourself</button></a>
+        <p>The <code class="code-span-1">srcset</code> attribute is required, and defines the source of the image.</p>
+
+        <p>The <code class="code-span-1">media</code> attribute is optional, and accepts the media queries you find in <a href="https://www.w3schools.com/cssref/css3_pr_mediaquery.asp" target="_blank">CSS @media rule.</a></p>
+
+        <p>You should also define an <code class="code-span-1">&lt;img&gt;</code> element for browsers that do not support the <code class="code-span-1">&lt;picture&gt;</code> element.</p>
+      </article>
+    </section>
+    <section class="main-section" id="videos">
+      <header>
+        <h2>Videos</h2>
+      </header>
+      <article>
+        <h3>Using The width Property</h3>
+        <p>If the width property is set to 100%, the video player will be responsive and scale up and down:</p>
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              video <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_video2" target="_blank"><button>Try it Yourself</button></a>
+        <p>Notice that in the example above, the video player can be scaled up to be larger than its original size. A better solution, in many cases, will be to use the <code class="code-span-1">max-width</code> property instead.</p>
+
+        <h3>Using The max-width Property</h3>
+        If the <code class="code-span-1">max-width</code> property is set to 100%, the video player will scale down if it has to, but never scale up to be larger than its original size:
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              video <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp; max-width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_video" target="_blank"><button>Try it Yourself</button></a>
+        <h3>Add a Video to the Example Web Page</h3>
+        <p>We want to add a video in our example web page. The video will be resized to always take up all the available space:</p>
+
+        <h4>Example</h4>
+        <div class="code-span-2"><code><span class="cssselectorcolor" style="color:brown">
+              video <span class="cssdelimitercolor" style="color:black">{</span><span class="csspropertycolor" style="color:red"><br>
+                &nbsp; width<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> 100%<span class="cssdelimitercolor" style="color:black">;</span></span><br>&nbsp; height<span class="csspropertyvaluecolor" style="color:mediumblue"><span class="cssdelimitercolor" style="color:black">:</span> auto<span class="cssdelimitercolor" style="color:black">;</span></span><br>
+              </span><span class="cssdelimitercolor" style="color:black">}</span> </span></code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_video3" target="_blank"><button>Try it Yourself</button></a>
+      </article>
+    </section>
+    <section class="main-section" id="frameworks">
+      <header>
+        <h2>Frameworks</h2>
+      </header>
+      <article>
+        <p>There are many existing CSS Frameworks that offer Responsive Design.</p>
+
+        <p>They are free, and easy to use.</p>
+
+        <h3>Using W3.CSS</h3>
+        <p>A great way to create a responsive design, is to use a responsive style sheet, like <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS</a></p>
+
+        <p>W3.CSS makes it easy to develop sites that look nice at any size; desktop, laptop, tablet, or phone:</p>
+        <div class="frameworks-container-green">
+          <h1>Demo</h1>
+          <p>Resize the page to see the responsiveness!</p>
+        </div>
+        <div class="frameworks-container-gray">
+          <div class="city">
+            <h2>London</h2>
+            London is the capital city of England.
+
+            It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.
+          </div>
+          <div class="city">
+            <h2>Paris</h2>
+            Paris is the capital of France.
+
+            The Paris area is one of the largest population centers in Europe, with more than 12 million inhabitants.
+          </div>
+          <div class="city">
+            <h2>Tokyo</h2>
+            Tokyo is the capital of Japan.
+
+            It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.
+          </div>
+        </div>
+
+        <h4>Example</h4>
+        <div class="code-span-2"><code>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>!DOCTYPE<span class="attributecolor" style="color:red"> html</span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>html<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>meta<span class="attributecolor" style="color:red"> name<span class="attributevaluecolor" style="color:mediumblue">="viewport"</span>
+                content<span class="attributevaluecolor" style="color:mediumblue">="width=device-width, initial-scale=1"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>link<span class="attributecolor" style="color:red"> rel<span class="attributevaluecolor" style="color:mediumblue">="stylesheet"</span>
+                href<span class="attributevaluecolor" style="color:mediumblue">="https://www.w3schools.com/w3css/4/w3.css"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>body<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="w3-container w3-green"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>W3Schools Demo<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span> <br>&nbsp;
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Resize this responsive page!<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span> <br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="w3-row-padding"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="w3-third"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span>London<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>London is the capital city of England.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>It is the most populous city in the United Kingdom,<br>&nbsp;&nbsp;&nbsp; with a
+            metropolitan area of over 13 million inhabitants.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="w3-third"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Paris<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Paris is
+            the capital of France.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span> <br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>The Paris area is one of the largest
+            population centers in Europe,<br>&nbsp;&nbsp;&nbsp; with more than 12 million
+            inhabitants.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="w3-third"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Tokyo<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h2<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Tokyo is the capital of Japan.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>p<span class="tagcolor" style="color:mediumblue">&gt;</span></span>It
+            is the center of the Greater Tokyo Area,<br>&nbsp;&nbsp;&nbsp; and the most populous
+            metropolitan area in the world.<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/p<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/body<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/html<span class="tagcolor" style="color:mediumblue">&gt;</span></span></code> </div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_w3css" target="_blank"><button>Try it Yourself</button></a>
+        <p>To learn more about W3.CSS, read our <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">W3.CSS Tutorial</a></p>
+        <h3>Bootstrap</h3>
+        <p>Another popular framework is Bootstrap, it uses HTML, CSS and jQuery to make responsive web pages.</p>
+        <h4>Example</h4>
+        <div class="code-span-2"><code>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>!DOCTYPE<span class="attributecolor" style="color:red"> html</span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>html<span class="attributecolor" style="color:red"> lang<span class="attributevaluecolor" style="color:mediumblue">="en"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>head<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>title<span class="tagcolor" style="color:mediumblue">&gt;</span></span>Bootstrap
+            Example<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/title<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>meta<span class="attributecolor" style="color:red"> charset<span class="attributevaluecolor" style="color:mediumblue">="utf-8"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>meta<span class="attributecolor" style="color:red"> name<span class="attributevaluecolor" style="color:mediumblue">="viewport"</span>
+                content<span class="attributevaluecolor" style="color:mediumblue">="width=device-width, initial-scale=1"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>link<span class="attributecolor" style="color:red"> rel<span class="attributevaluecolor" style="color:mediumblue">="stylesheet"</span>
+                href<span class="attributevaluecolor" style="color:mediumblue">="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>script<span class="attributecolor" style="color:red">
+                src<span class="attributevaluecolor" style="color:mediumblue">="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="jscolor" style="color:black"></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/script<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>script<span class="attributecolor" style="color:red">
+                src<span class="attributevaluecolor" style="color:mediumblue">="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><span class="jscolor" style="color:black"></span><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/script<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/head<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>body<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="container"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="jumbotron"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span>My First Bootstrap Page<span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/h1<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="row"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-4"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...<br>&nbsp;&nbsp;&nbsp;
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red"> class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-4"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ...<br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>div<span class="attributecolor" style="color:red">
+                class<span class="attributevaluecolor" style="color:mediumblue">="col-sm-4"</span></span><span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;&nbsp;&nbsp; ...<br>&nbsp;&nbsp;&nbsp; <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br>&nbsp;
+            <span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/div<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/body<span class="tagcolor" style="color:mediumblue">&gt;</span></span><br><span class="tagnamecolor" style="color:brown"><span class="tagcolor" style="color:mediumblue">&lt;</span>/html<span class="tagcolor" style="color:mediumblue">&gt;</span></span> </code></div>
+        <a href="https://www.w3schools.com/css/tryit.asp?filename=tryresponsive_bootstrap" target="_blank"><button>Try it Youtself</button></a>
+        <p>To learn more about Bootstrap, go to our <a href="https://www.w3schools.com/bootstrap/bootstrap_ver.asp" target="_blank">Bootstrap Tutorial.</a></p>
+      </article>
+    </section>
+    <section class="main-section" id="templates">
+      <header>
+        <h2>Templates</h2>
+      </header>
+      <article>
+
+        <p>We have created some responsive templates with the <a href="https://www.w3schools.com/w3css/default.asp" target="blank">W3.CSS framework</a>.</p>
+
+        <p>You are free to modify, save, share, and use them in all your projects.</p>
+        <div>
+          <h3 style="text-align: center;">Band Template</h3><img src="https://www.w3schools.com/css/img_temp_band.jpg" alt="Band Template Preview"><br>
+          <button>Demo</button>
+          <button>Try it Yourself</button>
+        </div>
+        <br>
+        <div>
+          <h3 style="text-align: center;">Art Template</h3><img src="https://www.w3schools.com/w3css/img_temp_art.jpg" alt="Art Template Preview"><br>
+          <button>Demo</button>
+          <button>Try it Yourself</button>
+        </div>
+        <br>
+        <div>
+          <h3 style="text-align: center;">Architect Template</h3><img src="https://www.w3schools.com/w3css/img_temp_architect.jpg" alt="Architect Template Preview"><br>
+          <button>Demo</button>
+          <button>Try it Yourself</button>
+        </div>
+
+      </article>
+    </section>
+  </main>
+
+</body>
+
+</html>
